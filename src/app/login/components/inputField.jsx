@@ -25,7 +25,6 @@ const InputField = (props) => {
 
   const handleLogin = async values => {
     try {
-      console.log(values)
       const token = await apiFetch({ payload: { ...values }, method: 'POST', url: '/api/user/login' })
       if (token) {
         localStorage.setItem('token', token)
