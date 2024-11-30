@@ -11,15 +11,15 @@ export const useStore = create(
       doFetchMe: async () => {
         try {
           const response = await apiFetch({ method: 'GET', url: '/api/me' })
-          set({ user: response })
+          set({ me: response })
         } catch (error) {
           console.error('Error fetching user:', error)
         }
       },
       doFetchTrees: async () => {
         try {
-          const response = await apiFetch({ method: 'GET', url: '/api/me' })
-          set({ group: response })
+          const response = await apiFetch({ method: 'GET', url: '/api/tree' })
+          set({ trees: response })
         } catch (error) {
           console.error('Error fetching group:', error)
         }
@@ -27,22 +27,14 @@ export const useStore = create(
       doFetchEvents: async () => {
         try {
           const response = await apiFetch({ method: 'GET', url: '/api/events' })
-          set({ group: response })
+          set({ events: response })
         } catch (error) {
           console.error('Error fetching group:', error)
         }
       },
-      selectTrees: async id => {
-        const { trees } = state()
-        return trees[id]
-      },
-      selectEvents: async id => {
-        const { events } = state()
-        return events[id]
-      },
       logout: () => {
         localStorage.clear()
-        set({ user: {}, group: {} })
+        set({ me: {}, trees: {}, events: {} })
       },
     }),
     {

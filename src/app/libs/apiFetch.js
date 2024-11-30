@@ -1,4 +1,3 @@
-
 const apiFetch = async ({ payload, method, url }) => {
   try {
     const token = localStorage.getItem('token')
@@ -6,7 +5,7 @@ const apiFetch = async ({ payload, method, url }) => {
       method,
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        'authorization': `Bearer ${token}`,
       },
     }
     if (payload) {

@@ -18,6 +18,7 @@ const queryDB = async ({ entity, filter, queryType, data }) => {
       return await db[entity].findUnique({ ...opts })
   
     case 'findMany': 
+    console.log(entity)
       payload = await db[entity].findMany({ ...opts })
       return payload.length ? payload : null
 
