@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server'
-import { WaterTree } from '~/app/api/entities'
 import ERROR from '~/error'
 import queryDB from '~/app/api/libs/queryDB'
 import cleanerData from '~/app/api/libs/cleanerData'
-import validatorFields from '~/app/api/libs/validatorFields'
 import payloadFormatter from '~/app/api/utils/payloadFormatter'
 import authenticationToken from '~/app/api/libs/authenticationToken'
 
@@ -11,9 +9,9 @@ export const POST = async request => {
   try{
     const data = await request.json()
     const hasPermission = authenticationToken(request)
-    if(hasPermission && validatorFields({ data, shape: WaterTree.shape })){
+    if(hasPermission){
       const payload = await queryDB({
-        entity: 'waterTree',
+        entity: 'events',
         queryType: 'create',
         data
       })
@@ -31,7 +29,7 @@ export const GET = async request => {
     const hasPermission = authenticationToken(request)
     if(!hasPermission) return ERROR.FORBIDDEN()
     const payloads = await queryDB({
-      entity: 'waterTree',
+      entity: 'events',
       queryType: 'findMany',
     })
     if(payloads){
