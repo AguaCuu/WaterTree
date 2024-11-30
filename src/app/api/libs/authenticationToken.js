@@ -6,8 +6,8 @@ const authenticationToken = ({ headers }) => {
   const authHeader = headers.get('authorization')
   const token = authHeader && authHeader.replace(/authorization /,'')
   if (token) {
-    const { validate } = jwt.verify(token, process.env.JWT_SECRET)
-    return validate
+    const { userId } = jwt.verify(token, process.env.JWT_SECRET)
+    return userId
   } else {
     ERROR.FORBIDDEN()
   }

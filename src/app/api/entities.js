@@ -24,6 +24,19 @@ export const Login = {
 export const WaterTree = {
   name: 'waterTree',
   shape: [
+    'name',    
+  ]
+}
+
+export const Me = {
+  name: 'me',
+  permissions: {
+    update: true,
+    delete: true
+  },
+  shape: [
     'name',
+    'lastname',
+    'email',
   ]
 }
