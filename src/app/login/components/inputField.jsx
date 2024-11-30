@@ -6,7 +6,7 @@ import { useStore } from '~/app/libs/store'
 import apiFetch from '~/app/libs/apiFetch'
 import { useState } from 'react'
 
-const InputField = (props) => {
+const InputField = () => {
   const [errorMessage, setErrorMessage] = useState('') 
   const { doFetchMe, doFetchTrees, doFetchEvents } = useStore(state => state)
   const validationSchema = object({
@@ -41,7 +41,7 @@ const InputField = (props) => {
   }
 
   return (
-    <div style={{height:'80%', display:'flex', alignItems:'center', justifyContent:'center'}}>
+    <div style={{ height:'80%', display:'flex', alignItems:'center', justifyContent:'center' }}>
       <form action='' onSubmit={formik.handleSubmit} className={styles.logInForm}>
         <h2>Login</h2>
         <Input
