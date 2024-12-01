@@ -9,7 +9,7 @@ const AboutUs = () => {
     return (
         <Container maxWidth="lg" sx={{ marginTop: 4 }}>
             <Typography variant="h1" align="center" gutterBottom>
-                About Us
+                Sobre nosotros
             </Typography>
             <Grid container spacing={4}>
                 <Grid item xs={12} md={6}>
@@ -25,20 +25,20 @@ const AboutUs = () => {
                     </Paper>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Typography variant="h2">Who We Are</Typography>
+                    <Typography variant="h2">Quienes somos</Typography>
                     <Typography paragraph>
-                        We are a passionate team dedicated to providing the best services to our clients. Our mission is to innovate and inspire through our work.
+                        Somos un grupo de personas apsaionados por el sustento de nuestros ecosistemas y la gran ganaderia que se da en nuestro hermoso estado Chihuahua
                     </Typography>
-                    <Typography variant="h2">Our Mission</Typography>
+                    <Typography variant="h2">Nuestra mision</Typography>
                     <Typography paragraph>
-                        To deliver high-quality products that meet the needs of our customers while maintaining a commitment to sustainability and community engagement.
+                        Entregar a nuestros clientes un producto que solucione la escazes radical en nuestro estado proponiendo una inversion a largo plazo que permita tener una obtencion de agua mas responsable y eficiente
                     </Typography>
-                    <Typography variant="h2">Our Values</Typography>
+                    <Typography variant="h2">Nuestros valores</Typography>
                     <ul>
-                        <li>Integrity</li>
-                        <li>Innovation</li>
-                        <li>Collaboration</li>
-                        <li>Excellence</li>
+                        <li>Integridad</li>
+                        <li>Inovacion</li>
+                        <li>Colaboracion</li>
+                        <li>Excelencia</li>
                     </ul>
                 </Grid>
             </Grid>

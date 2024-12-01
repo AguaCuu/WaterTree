@@ -97,6 +97,7 @@ const Home = () => {
         </Container>
       </Box>
 
+
       {/* About Section */}
       <AboutUs/>
 

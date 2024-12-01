@@ -237,7 +237,7 @@ a.secondary {
 }
 
 .apiInfoContainer {
-  color:red;
+  font-weight: 400;
 }
 
 /* Responsive design for smaller devices */

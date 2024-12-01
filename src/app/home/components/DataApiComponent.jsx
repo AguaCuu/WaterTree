@@ -7,7 +7,7 @@ const DataApiComponent = () => {
 
   return (  
     <div className={styles.apiInfoContainer}>
-        Aqui se muestra lo del api
+        <h2>Bienvenido! La ultima lluvia fue hace: {'2 dias'}</h2>
       </div>
   )
 }
