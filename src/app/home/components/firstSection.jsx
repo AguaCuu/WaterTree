@@ -1,6 +1,7 @@
 import React from 'react'
 import * as styles from '../../page.module.css'
 //import trees from '~/../../public/trees.jpg'
+import DataApiComponent from './DataApiComponent'
 
 const FirstSection = () => {
   return (
@@ -10,6 +11,9 @@ const FirstSection = () => {
         <hr />
       </div>
       
+      <div>
+        <DataApiComponent/>
+      </div>
     </div>
   )
 }

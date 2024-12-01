@@ -1,6 +1,9 @@
 import { AppBar, Toolbar, Typography, Button, Box, Container, Grid } from '@mui/material'
 import Image from 'next/image'
 import treesImg from '../../public/trees.jpg'
+import Link from 'next/link'
+
+const fontWeight = '800'
 
 const Home = () => {
   return (
@@ -10,20 +13,16 @@ const Home = () => {
         position="fixed"
         color="primary"
         sx={{
-          borderRadius: 3, // Rounded corners
-          margin: 2, // Margin around the NavBar
-          width: 'calc(100% - 32px)', // Adjust width to account for margins
+          width: '100svw', // Adjust width to account for margins
           boxShadow: 3, // Add shadow for better design
         }}
       >
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            My Landing Page
+            Water Tree
           </Typography>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Signup</Button>
-          <Button color="inherit">About</Button>
-          <Button color="inherit">Contact</Button>
+          <Link href='/login' style={{color:'white', marginLeft:'10px', marginRight:'10px', textDecoration:'none'}}>Entrar a la cuenta</Link>
+          <Link href='/register' style={{color:'white', marginLeft:'10px', marginRight:'10px', textDecoration:'none'}}>Registrate</Link>
         </Toolbar>
       </AppBar>
 
@@ -65,31 +64,31 @@ const Home = () => {
       {/* Features Section */}
       <Box sx={{ py: 8, backgroundColor: '#ffffff' }}>
         <Container>
-          <Typography variant="h4" gutterBottom align="center">
-            ¿Por queé water tree?
+          <Typography style={{fontWeight:(fontWeight + 300)}} variant="h4" gutterBottom align="center">
+            ¿Por qué water tree?
           </Typography>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6} md={4}>
               <Box sx={{ textAlign: 'center', padding: 2 }}>
-                <Typography variant="h6"></Typography>
+                <Typography variant='h6' style={{fontWeight:fontWeight}}>Eficiente</Typography>
                 <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Elaboramos productos sustentables que ayudan al medio ambiente.
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <Box sx={{ textAlign: 'center', padding: 2 }}>
-                <Typography variant="h6">Feature 2</Typography>
+                <Typography variant="h6" style={{fontWeight:fontWeight}}>Economico</Typography>
                 <Typography>
-                  Curabitur pulvinar euismod turpis, eget placerat augue.
+                  Con water tree planeamos proveer a mas de <span>100,000</span> de personas llegando a lugares donde no cualquier metodo funcionaria
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <Box sx={{ textAlign: 'center', padding: 2 }}>
-                <Typography variant="h6">Feature 3</Typography>
+                <Typography variant="h6" style={{fontWeight:fontWeight}}>Conveniente</Typography>
                 <Typography>
-                  Quisque sed tortor sit amet justo cursus gravida.
+                  Con water tree surgé una gran propuesta hacia socios y colaboradores para promover las energias renovables y 
                 </Typography>
               </Box>
             </Grid>

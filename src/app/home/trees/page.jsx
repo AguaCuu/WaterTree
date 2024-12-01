@@ -13,9 +13,10 @@ const Trees = () => {
         display:'flex',
         flex:1.3
       }}>
-        <SideBar/>
-      </Box>
 
+        <SideBar/>
+
+      </Box>
 
       <Box sx={{
         display:'flex',
@@ -29,7 +30,7 @@ const Trees = () => {
           alignItems:'center',
           justifyContent: 'center'
         }}>
-          <TextField className='treesInput' id="standard-basic" label="Search for tree" variant="standard" />
+
         </Box>
         <TreesContainer></TreesContainer>
       </Box>
