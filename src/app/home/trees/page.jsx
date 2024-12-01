@@ -11,7 +11,7 @@ const Trees = () => {
     <div style={{ display:'flex', height:'100vh' }}>
       <Box sx={{
         display:'flex',
-        flex:2
+        flex:1.3
       }}>
         <SideBar/>
       </Box>
