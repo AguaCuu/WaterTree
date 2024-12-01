@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { useFormik, Form as FormikForm, Field, TextField} from 'formik'
 import { Box } from '@mui/material'
 import InputField from './inputField'
 
@@ -10,8 +9,8 @@ const Form = () => {
     <Box sx={{
       height: '45svh',
       width: {
-        xs: 200,//0
-        sm: 200,//600
+        xs: 300,//0
+        sm: 300,//600
         md: 350,//900
         lg: 350,//1200
         xl: 600//1536

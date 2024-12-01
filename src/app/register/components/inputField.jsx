@@ -4,7 +4,7 @@ import { useFormik } from 'formik'
 import { object, string } from 'yup'
 import * as styles from '../../page.module.css'
 
-const InputField = (props) => {
+const InputField = () => {
 
   const validationSchema = object({
     Name: string().required(),
@@ -25,7 +25,7 @@ const InputField = (props) => {
   })
 
   return (
-    <div style={{height:'80%', display:'flex', alignItems:'center', justifyContent:'center'}}>
+    <div style={{ height:'80%', display:'flex', alignItems:'center', justifyContent:'center' }}>
       <form action='' onSubmit={formik.handleSubmit} className={styles.logInForm}>
         <h2>Register</h2>
         <Input

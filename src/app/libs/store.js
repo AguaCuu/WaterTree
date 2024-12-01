@@ -4,7 +4,7 @@ import apiFetch from '~/app/libs/apiFetch'
 
 export const useStore = create(
   persist(
-    (set, state) => ({
+    set => ({
       me: {},
       trees: {},
       events: {},

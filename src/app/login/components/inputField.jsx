@@ -52,7 +52,7 @@ const InputField = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}>
         </Input>
-        {formik.touched.email && formik.errors.email ? <p style={{ color:'red', margin:'0' }}>{formik.errors.Email}</p> : null}
+        {formik.touched.email && formik.errors.email ? <p style={{ color:'red', margin:'0' }}>{formik.errors.email}</p> : null}
         <Input 
           type='password' 
           placeholder='12345678' 
@@ -61,7 +61,7 @@ const InputField = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}>
         </Input>
-        {formik.touched.Password && formik.errors.Password ? <p style={{ color:'red', margin:'0' }}>{formik.errors.Password}</p> : null}
+        {formik.touched.password && formik.errors.password ? <p style={{ color:'red', margin:'0' }}>{formik.errors.password}</p> : null}
         <button className={styles.logInButton} type='submit'>Submit</button>
         {errorMessage && <p style={{ color: 'red', margin: '10px 0' }}>{errorMessage}</p>} {/* Muestra el mensaje de error */}
       </form>
