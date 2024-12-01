@@ -1,11 +1,11 @@
-import React from 'react'
-import { Box } from '@mui/material'
+import React, { useState } from 'react'
+import { Box, Button } from '@mui/material'
 import * as style from '~/app/page.module.css'
-import Status from './status'
 import Image from 'next/image'
 
 const TreeCard = props => {
   //const [id, setId] = useState(0) 
+  const [state, setState] = useState(false)
   
   return (
     <Box
@@ -13,7 +13,7 @@ const TreeCard = props => {
         display: 'flex',
         flexDirection: 'column',
         width: '180px',
-        height: '270px', // Fixed height for the card
+        height: '310px', // Fixed height for the card
         gap: '5px',
         borderRadius: '5px',
         border: 'none',
@@ -31,12 +31,20 @@ const TreeCard = props => {
         />
       </div>
 
-      <div className={style.treeCardInfo} style={{ overflow: 'hidden' }}>
-        <p style={{ fontWeight: 'bold', margin: 0 }}>{props.tree.name}</p>
+      <div className={style.treeCardInfo}>
+        <p style={{ fontWeight: 'bold', margin: 0 }}>{props.tree.name}#1</p>
         <p style={{ fontWeight: '', margin: 0 }}>Status: {props.tree.state ? 'Active': 'Unactive'}</p>
         <p style={{ fontWeight: '', margin: 0 }}>Tempeature: {props.tree.temperature}</p>
         <p style={{ fontWeight: '', margin: 0 }}>Humidity: {props.tree.humidity}</p>
-        <Status />
+        <Button 
+          style={{
+            height:'25px'
+          }}
+          color={state ? 'error' : 'primary'}
+          onClick={() => setState(!state)}
+        >
+          {state ? <p>Apagar</p> : <p>Prender</p>}
+        </Button>
       </div>
     </Box>
   )

@@ -6,7 +6,12 @@ import { useState } from 'react'
 import apiFetch from '~/app/libs/apiFetch'
 import * as styles from '../../page.module.css'
 
+//Loading component
+import { CircularProgress } from '@mui/material';
+
 const InputField = () => {
+  const [isLoading, setIsLoading] = useState(false)
+
   const router = useRouter()
   const [errorMessage, setErrorMessage] = useState('') 
   const validationSchema = object({
@@ -43,6 +48,7 @@ const InputField = () => {
   })
 
   const handleRegister = async values => {
+    setIsLoading(true)
     try {
       const newUser = await apiFetch({ payload: { ...values }, method: 'POST', url: '/api/user/' })
       if (newUser) {
@@ -135,9 +141,9 @@ const InputField = () => {
         <button
           className={styles.logInButton}
           type="submit"
-          style={{ marginTop: '10px', padding: '10px' }}
+          style={{ marginTop: '10px', padding: '10px', display:'flex', alignItems:'center', justifyContent:'center' }}
         >
-          Submit
+          {isLoading === true ? <CircularProgress color='inherit' size={20} thickness={4} /> : <p style={{margin:0}}>Crear cuenta</p>}
         </button>
       </form>
     </div>

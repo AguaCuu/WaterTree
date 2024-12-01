@@ -2,6 +2,7 @@ import { AppBar, Toolbar, Typography, Button, Box, Container, Grid } from '@mui/
 import Image from 'next/image'
 import treesImg from '../../public/trees.jpg'
 import Link from 'next/link'
+import AboutUs from './components/aboutUsSection'
 
 const fontWeight = '800'
 
@@ -97,16 +98,7 @@ const Home = () => {
       </Box>
 
       {/* About Section */}
-      <Box sx={{ py: 8, backgroundColor: '#f5f5f5' }}>
-        <Container>
-          <Typography variant="h4" gutterBottom align="center">
-            Sobre water tree
-          </Typography>
-          <Typography align="center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut deleniti, accusamus ex voluptates magni, rem placeat qui cumque perferendis eveniet amet deserunt nihil mollitia eos a numquam sed facere, soluta suscipit necessitatibus quisquam velit ullam iure? Ex illo neque a.
-          </Typography>
-        </Container>
-      </Box>
+      <AboutUs/>
 
       {/* Contact Section */}
       <Box sx={{ py: 8, backgroundColor: '#ffffff' }}>

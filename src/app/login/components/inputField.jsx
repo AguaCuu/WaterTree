@@ -5,8 +5,14 @@ import { object, string } from 'yup'
 import { useStore } from '~/app/libs/store'
 import apiFetch from '~/app/libs/apiFetch'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+
+//Loading component
+import { CircularProgress } from '@mui/material';
 
 const InputField = () => {
+  const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
   const [errorMessage, setErrorMessage] = useState('') 
   const { doFetchMe, doFetchTrees, doFetchEvents } = useStore(state => state)
   const validationSchema = object({
@@ -24,6 +30,7 @@ const InputField = () => {
   })
 
   const handleLogin = async values => {
+    setIsLoading(true)
     try {
       const token = await apiFetch({ payload: { ...values }, method: 'POST', url: '/api/user/login' })
       if (token) {
@@ -32,10 +39,13 @@ const InputField = () => {
         await doFetchTrees()
         await doFetchEvents()
         setErrorMessage('') 
+        router.push('/home')
       } else {
+        setIsLoading(false)
         setErrorMessage('Credenciales inválidas') 
       }
     } catch (error) {
+      setIsLoading(false)
       setErrorMessage('Error al intentar iniciar sesión') 
     }
   }
@@ -62,7 +72,11 @@ const InputField = () => {
           onBlur={formik.handleBlur}>
         </Input>
         {formik.touched.password && formik.errors.password ? <p style={{ color:'red', margin:'0' }}>{formik.errors.password}</p> : null}
-        <button className={styles.logInButton} type='submit'>Submit</button>
+
+        <button className={styles.logInButton} type='submit'>
+          {isLoading ? <CircularProgress color='inherit' size={20} thickness={4} /> : <p style={{margin:0}}>Entrar</p>}
+        </button>
+
         {errorMessage && <p style={{ color: 'red', margin: '10px 0' }}>{errorMessage}</p>} {/* Muestra el mensaje de error */}
       </form>
     </div>
